@@ -7,7 +7,7 @@ import {
   RawNodeDatum,
   TreeNodeDatum,
 } from "react-d3-tree/lib/types/common";
-import { v4 } from "uuid";
+const { v4 } = require('uuid');
 
 const Tree = dynamic(() => import("react-d3-tree"), {
   ssr: false,
@@ -25,16 +25,16 @@ export function bfs(
   while (queue.length > 0) {
     const curNode = queue.pop();
 
-    if (curNode.attributes?.id === id) {
-      curNode.children.push(node);
+    if (curNode?.attributes?.id === id) {
+      curNode?.children?.push(node);
 
       return { ...tree };
     }
 
-    const len = curNode.children.length;
+    const len = curNode?.children?.length;
 
     for (let i = 0; i < len; i++) {
-      queue.unshift(curNode.children[i]);
+      queue.unshift(curNode?.children[i]);
     }
   }
 }
@@ -71,7 +71,7 @@ export default function Home() {
   };
 
   const handleSubmit = (familyMemberName: string) => {
-    const newTree = bfs(node.attributes?.id, tree, {
+    const newTree = bfs(node?.attributes?.id, tree, {
       name: familyMemberName,
       attributes: {
         id: v4(),
