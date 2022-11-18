@@ -21,7 +21,10 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 ## Final Look
 
 ### Starting Page
+![InitialPage](https://github.com/chathuRashmini/react-tree/blob/main/FinalLook/initial_page.png?raw=true)
 
 ### When adding a child
+![Modal](https://github.com/chathuRashmini/react-tree/blob/main/FinalLook/add_a_child.png?raw=true)
 
 ### With added children
+![TreeWithChildren](https://github.com/chathuRashmini/react-tree/blob/main/FinalLook/new_tree_with_children.png?raw=true)
